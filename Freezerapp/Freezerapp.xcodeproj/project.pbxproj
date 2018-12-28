@@ -1,0 +1,742 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11D63BFECE2936A844AAE6EA /* Pods_FreezerappUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD6083A849F1993B23DF69C /* Pods_FreezerappUITests.framework */; };
+		5A81646D430E48F17386926E /* Pods_Freezerapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299FDD1C9720420492A12360 /* Pods_Freezerapp.framework */; };
+		732CB67F21D61F1D006C1699 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732CB67E21D61F1C006C1699 /* AppDelegate.swift */; };
+		732CB68121D61F1D006C1699 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732CB68021D61F1D006C1699 /* ViewController.swift */; };
+		732CB68421D61F1D006C1699 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 732CB68221D61F1D006C1699 /* Main.storyboard */; };
+		732CB68621D61F1F006C1699 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 732CB68521D61F1F006C1699 /* Assets.xcassets */; };
+		732CB68921D61F1F006C1699 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 732CB68721D61F1F006C1699 /* LaunchScreen.storyboard */; };
+		732CB69421D61F1F006C1699 /* FreezerappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732CB69321D61F1F006C1699 /* FreezerappTests.swift */; };
+		732CB69F21D61F1F006C1699 /* FreezerappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732CB69E21D61F1F006C1699 /* FreezerappUITests.swift */; };
+		732CB6AD21D61FF1006C1699 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 732CB6AC21D61FF1006C1699 /* GoogleService-Info.plist */; };
+		9B503A7F685C4C0A5326CCA5 /* Pods_FreezerappTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76B6ED2C96E3F43F83733F77 /* Pods_FreezerappTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		732CB69021D61F1F006C1699 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 732CB67321D61F1C006C1699 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 732CB67A21D61F1C006C1699;
+			remoteInfo = Freezerapp;
+		};
+		732CB69B21D61F1F006C1699 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 732CB67321D61F1C006C1699 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 732CB67A21D61F1C006C1699;
+			remoteInfo = Freezerapp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		299FDD1C9720420492A12360 /* Pods_Freezerapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Freezerapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BD6083A849F1993B23DF69C /* Pods_FreezerappUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FreezerappUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		482E4DCFC600415A81081FB7 /* Pods-Freezerapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Freezerapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Freezerapp/Pods-Freezerapp.release.xcconfig"; sourceTree = "<group>"; };
+		732CB67B21D61F1C006C1699 /* Freezerapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Freezerapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		732CB67E21D61F1C006C1699 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		732CB68021D61F1D006C1699 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		732CB68321D61F1D006C1699 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		732CB68521D61F1F006C1699 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		732CB68821D61F1F006C1699 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		732CB68A21D61F1F006C1699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		732CB68F21D61F1F006C1699 /* FreezerappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreezerappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		732CB69321D61F1F006C1699 /* FreezerappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreezerappTests.swift; sourceTree = "<group>"; };
+		732CB69521D61F1F006C1699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		732CB69A21D61F1F006C1699 /* FreezerappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreezerappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		732CB69E21D61F1F006C1699 /* FreezerappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreezerappUITests.swift; sourceTree = "<group>"; };
+		732CB6A021D61F1F006C1699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		732CB6AC21D61FF1006C1699 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		76B6ED2C96E3F43F83733F77 /* Pods_FreezerappTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FreezerappTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADF0E16BF7CA78C2461F2BE7 /* Pods-Freezerapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Freezerapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Freezerapp/Pods-Freezerapp.debug.xcconfig"; sourceTree = "<group>"; };
+		BE4F3DC6C04F03B0103C173B /* Pods-FreezerappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreezerappTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FreezerappTests/Pods-FreezerappTests.release.xcconfig"; sourceTree = "<group>"; };
+		C4F22495127C0261D9E8E451 /* Pods-FreezerappUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreezerappUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FreezerappUITests/Pods-FreezerappUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E1674702C2124EA6246ED4CC /* Pods-FreezerappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreezerappTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FreezerappTests/Pods-FreezerappTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F491CD0B6DAE6971BB7E99E2 /* Pods-FreezerappUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreezerappUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FreezerappUITests/Pods-FreezerappUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		732CB67821D61F1C006C1699 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A81646D430E48F17386926E /* Pods_Freezerapp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		732CB68C21D61F1F006C1699 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B503A7F685C4C0A5326CCA5 /* Pods_FreezerappTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		732CB69721D61F1F006C1699 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11D63BFECE2936A844AAE6EA /* Pods_FreezerappUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		732CB67221D61F1C006C1699 = {
+			isa = PBXGroup;
+			children = (
+				732CB67D21D61F1C006C1699 /* Freezerapp */,
+				732CB69221D61F1F006C1699 /* FreezerappTests */,
+				732CB69D21D61F1F006C1699 /* FreezerappUITests */,
+				732CB67C21D61F1C006C1699 /* Products */,
+				7684A3A7153C58E7372BD9A4 /* Pods */,
+				C534B007B908C437D26E0058 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		732CB67C21D61F1C006C1699 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				732CB67B21D61F1C006C1699 /* Freezerapp.app */,
+				732CB68F21D61F1F006C1699 /* FreezerappTests.xctest */,
+				732CB69A21D61F1F006C1699 /* FreezerappUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		732CB67D21D61F1C006C1699 /* Freezerapp */ = {
+			isa = PBXGroup;
+			children = (
+				732CB6AC21D61FF1006C1699 /* GoogleService-Info.plist */,
+				732CB67E21D61F1C006C1699 /* AppDelegate.swift */,
+				732CB68021D61F1D006C1699 /* ViewController.swift */,
+				732CB68221D61F1D006C1699 /* Main.storyboard */,
+				732CB68521D61F1F006C1699 /* Assets.xcassets */,
+				732CB68721D61F1F006C1699 /* LaunchScreen.storyboard */,
+				732CB68A21D61F1F006C1699 /* Info.plist */,
+			);
+			path = Freezerapp;
+			sourceTree = "<group>";
+		};
+		732CB69221D61F1F006C1699 /* FreezerappTests */ = {
+			isa = PBXGroup;
+			children = (
+				732CB69321D61F1F006C1699 /* FreezerappTests.swift */,
+				732CB69521D61F1F006C1699 /* Info.plist */,
+			);
+			path = FreezerappTests;
+			sourceTree = "<group>";
+		};
+		732CB69D21D61F1F006C1699 /* FreezerappUITests */ = {
+			isa = PBXGroup;
+			children = (
+				732CB69E21D61F1F006C1699 /* FreezerappUITests.swift */,
+				732CB6A021D61F1F006C1699 /* Info.plist */,
+			);
+			path = FreezerappUITests;
+			sourceTree = "<group>";
+		};
+		7684A3A7153C58E7372BD9A4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ADF0E16BF7CA78C2461F2BE7 /* Pods-Freezerapp.debug.xcconfig */,
+				482E4DCFC600415A81081FB7 /* Pods-Freezerapp.release.xcconfig */,
+				E1674702C2124EA6246ED4CC /* Pods-FreezerappTests.debug.xcconfig */,
+				BE4F3DC6C04F03B0103C173B /* Pods-FreezerappTests.release.xcconfig */,
+				F491CD0B6DAE6971BB7E99E2 /* Pods-FreezerappUITests.debug.xcconfig */,
+				C4F22495127C0261D9E8E451 /* Pods-FreezerappUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C534B007B908C437D26E0058 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				299FDD1C9720420492A12360 /* Pods_Freezerapp.framework */,
+				76B6ED2C96E3F43F83733F77 /* Pods_FreezerappTests.framework */,
+				3BD6083A849F1993B23DF69C /* Pods_FreezerappUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		732CB67A21D61F1C006C1699 /* Freezerapp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 732CB6A321D61F1F006C1699 /* Build configuration list for PBXNativeTarget "Freezerapp" */;
+			buildPhases = (
+				C8F1A0FC97C38828E53A9E1E /* [CP] Check Pods Manifest.lock */,
+				732CB67721D61F1C006C1699 /* Sources */,
+				732CB67821D61F1C006C1699 /* Frameworks */,
+				732CB67921D61F1C006C1699 /* Resources */,
+				130366B86BEBB978733EA856 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Freezerapp;
+			productName = Freezerapp;
+			productReference = 732CB67B21D61F1C006C1699 /* Freezerapp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		732CB68E21D61F1F006C1699 /* FreezerappTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 732CB6A621D61F1F006C1699 /* Build configuration list for PBXNativeTarget "FreezerappTests" */;
+			buildPhases = (
+				01861BDA1D1B6E10792E0F53 /* [CP] Check Pods Manifest.lock */,
+				732CB68B21D61F1F006C1699 /* Sources */,
+				732CB68C21D61F1F006C1699 /* Frameworks */,
+				732CB68D21D61F1F006C1699 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				732CB69121D61F1F006C1699 /* PBXTargetDependency */,
+			);
+			name = FreezerappTests;
+			productName = FreezerappTests;
+			productReference = 732CB68F21D61F1F006C1699 /* FreezerappTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		732CB69921D61F1F006C1699 /* FreezerappUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 732CB6A921D61F1F006C1699 /* Build configuration list for PBXNativeTarget "FreezerappUITests" */;
+			buildPhases = (
+				E19927C41A244568B7445F1A /* [CP] Check Pods Manifest.lock */,
+				732CB69621D61F1F006C1699 /* Sources */,
+				732CB69721D61F1F006C1699 /* Frameworks */,
+				732CB69821D61F1F006C1699 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				732CB69C21D61F1F006C1699 /* PBXTargetDependency */,
+			);
+			name = FreezerappUITests;
+			productName = FreezerappUITests;
+			productReference = 732CB69A21D61F1F006C1699 /* FreezerappUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		732CB67321D61F1C006C1699 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Benjamin Van Iseghem";
+				TargetAttributes = {
+					732CB67A21D61F1C006C1699 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					732CB68E21D61F1F006C1699 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 732CB67A21D61F1C006C1699;
+					};
+					732CB69921D61F1F006C1699 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 732CB67A21D61F1C006C1699;
+					};
+				};
+			};
+			buildConfigurationList = 732CB67621D61F1C006C1699 /* Build configuration list for PBXProject "Freezerapp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 732CB67221D61F1C006C1699;
+			productRefGroup = 732CB67C21D61F1C006C1699 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				732CB67A21D61F1C006C1699 /* Freezerapp */,
+				732CB68E21D61F1F006C1699 /* FreezerappTests */,
+				732CB69921D61F1F006C1699 /* FreezerappUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		732CB67921D61F1C006C1699 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				732CB68921D61F1F006C1699 /* LaunchScreen.storyboard in Resources */,
+				732CB6AD21D61FF1006C1699 /* GoogleService-Info.plist in Resources */,
+				732CB68621D61F1F006C1699 /* Assets.xcassets in Resources */,
+				732CB68421D61F1D006C1699 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		732CB68D21D61F1F006C1699 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		732CB69821D61F1F006C1699 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01861BDA1D1B6E10792E0F53 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FreezerappTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		130366B86BEBB978733EA856 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Freezerapp/Pods-Freezerapp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Freezerapp/Pods-Freezerapp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8F1A0FC97C38828E53A9E1E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Freezerapp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E19927C41A244568B7445F1A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FreezerappUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		732CB67721D61F1C006C1699 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				732CB68121D61F1D006C1699 /* ViewController.swift in Sources */,
+				732CB67F21D61F1D006C1699 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		732CB68B21D61F1F006C1699 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				732CB69421D61F1F006C1699 /* FreezerappTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		732CB69621D61F1F006C1699 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				732CB69F21D61F1F006C1699 /* FreezerappUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		732CB69121D61F1F006C1699 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 732CB67A21D61F1C006C1699 /* Freezerapp */;
+			targetProxy = 732CB69021D61F1F006C1699 /* PBXContainerItemProxy */;
+		};
+		732CB69C21D61F1F006C1699 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 732CB67A21D61F1C006C1699 /* Freezerapp */;
+			targetProxy = 732CB69B21D61F1F006C1699 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		732CB68221D61F1D006C1699 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				732CB68321D61F1D006C1699 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		732CB68721D61F1F006C1699 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				732CB68821D61F1F006C1699 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		732CB6A121D61F1F006C1699 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		732CB6A221D61F1F006C1699 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		732CB6A421D61F1F006C1699 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADF0E16BF7CA78C2461F2BE7 /* Pods-Freezerapp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5S7HKF5B28;
+				INFOPLIST_FILE = Freezerapp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = benjamin.vaniseghem.Freezerapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		732CB6A521D61F1F006C1699 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 482E4DCFC600415A81081FB7 /* Pods-Freezerapp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5S7HKF5B28;
+				INFOPLIST_FILE = Freezerapp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = benjamin.vaniseghem.Freezerapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		732CB6A721D61F1F006C1699 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1674702C2124EA6246ED4CC /* Pods-FreezerappTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5S7HKF5B28;
+				INFOPLIST_FILE = FreezerappTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = benjamin.vaniseghem.FreezerappTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Freezerapp.app/Freezerapp";
+			};
+			name = Debug;
+		};
+		732CB6A821D61F1F006C1699 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE4F3DC6C04F03B0103C173B /* Pods-FreezerappTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5S7HKF5B28;
+				INFOPLIST_FILE = FreezerappTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = benjamin.vaniseghem.FreezerappTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Freezerapp.app/Freezerapp";
+			};
+			name = Release;
+		};
+		732CB6AA21D61F1F006C1699 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F491CD0B6DAE6971BB7E99E2 /* Pods-FreezerappUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5S7HKF5B28;
+				INFOPLIST_FILE = FreezerappUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = benjamin.vaniseghem.FreezerappUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Freezerapp;
+			};
+			name = Debug;
+		};
+		732CB6AB21D61F1F006C1699 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4F22495127C0261D9E8E451 /* Pods-FreezerappUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5S7HKF5B28;
+				INFOPLIST_FILE = FreezerappUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = benjamin.vaniseghem.FreezerappUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Freezerapp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		732CB67621D61F1C006C1699 /* Build configuration list for PBXProject "Freezerapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				732CB6A121D61F1F006C1699 /* Debug */,
+				732CB6A221D61F1F006C1699 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		732CB6A321D61F1F006C1699 /* Build configuration list for PBXNativeTarget "Freezerapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				732CB6A421D61F1F006C1699 /* Debug */,
+				732CB6A521D61F1F006C1699 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		732CB6A621D61F1F006C1699 /* Build configuration list for PBXNativeTarget "FreezerappTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				732CB6A721D61F1F006C1699 /* Debug */,
+				732CB6A821D61F1F006C1699 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		732CB6A921D61F1F006C1699 /* Build configuration list for PBXNativeTarget "FreezerappUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				732CB6AA21D61F1F006C1699 /* Debug */,
+				732CB6AB21D61F1F006C1699 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 732CB67321D61F1C006C1699 /* Project object */;
+}
