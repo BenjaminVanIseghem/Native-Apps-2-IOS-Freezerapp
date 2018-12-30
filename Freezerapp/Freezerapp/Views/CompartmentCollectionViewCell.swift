@@ -10,8 +10,6 @@ import UIKit
 
 class CompartmentCollectionViewCell : UICollectionViewCell {
     
-    var test = nil
-    
     override init(frame: CGRect) {
         super.init(frame : frame)
         self.backgroundColor = .purple

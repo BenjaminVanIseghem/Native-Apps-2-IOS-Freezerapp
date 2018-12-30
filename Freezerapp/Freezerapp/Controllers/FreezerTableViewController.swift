@@ -13,13 +13,41 @@ import FirebaseDatabase
 var currentUserId = Auth.auth().currentUser?.uid
 
 class FreezerTableViewController : UIViewController, UITableViewDataSource, UITableViewDelegate {
-    //Firebase reference
-    var refFreezers = Database.database().reference()
+    //API manager
+    let firebaseAPI = FirebaseAPI()
     
+    //List where freezers will be stored
     var freezerList = [FreezerModel]()
     
     //TableView UI Component
     @IBOutlet weak var tblFreezers: UITableView!
+    
+    //Creation of textfields where a new freezer will be added
+    var freezerNameTextField : UITextField!
+    var freezerLocationTextField : UITextField!
+    
+    //Functions where textfield will be assigned
+    func freezerNameTextField(textField : UITextField!){
+        freezerNameTextField = textField
+        freezerNameTextField.placeholder = "Freezer name"
+    }
+    func freezerLocationTextField(textField : UITextField){
+        freezerLocationTextField = textField
+        freezerLocationTextField.placeholder = "Location"
+    }
+    
+    //Override function
+    //Here is where the TableView gets stacked
+    //It observes the data coming from the firebase database
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        firebaseAPI.getFreezers(){
+            freezerList in
+            self.freezerList = freezerList
+            self.tblFreezers.reloadData()
+        }
+    }
     
     //Get the size of the freezerlist
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,20 +65,6 @@ class FreezerTableViewController : UIViewController, UITableViewDataSource, UITa
         cell.detailTextLabel?.text = freezer.location
         
         return cell
-    }
-    
-    //Creation of textfields where a new freezer will be added
-    var freezerNameTextField : UITextField!
-    var freezerLocationTextField : UITextField!
-    
-    //Functions where textfield will be assigned
-    func freezerNameTextField(textField : UITextField!){
-        freezerNameTextField = textField
-        freezerNameTextField.placeholder = "Freezer name"
-    }
-    func freezerLocationTextField(textField : UITextField){
-        freezerLocationTextField = textField
-        freezerLocationTextField.placeholder = "Location"
     }
     
     //Action what happens when the navbar button is pressed
@@ -77,54 +91,16 @@ class FreezerTableViewController : UIViewController, UITableViewDataSource, UITa
     
     //Save method which is used inside the alert
     func save(alert : UIAlertAction){
-        //Sets the correct ref
-        let ref = refFreezers.child("freezers").child(currentUserId!).childByAutoId()
-        let id = ref.key
+        //Get the values from the text fields
+        let name = freezerNameTextField.text! as String
+        let location = freezerLocationTextField.text! as String
         
-        //Make freezer object to store
-        let freezer = [
-            "id": id! as NSString,
-            "name": freezerNameTextField.text! as NSString,
-            "location": freezerLocationTextField.text! as NSString
-            ] as [String : Any]
-        
-        //Add the data to the Firebase Database
-        ref.setValue(freezer)
+        //Call API
+        firebaseAPI.uploadFreezer(name: name, location: location)
         
         //Reload the View
         self.tblFreezers.reloadData()
         
-    }
-    
-    //Override function
-    //Here is where the TableView gets stacked
-    //It observes the data coming from the firebase database
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        //Observer the firebase data
-        refFreezers.child("freezers").child(currentUserId!).observe(DataEventType.value, with: {
-            (snapshot) in
-            if snapshot.childrenCount > 0 {
-                self.freezerList.removeAll()
-                
-                for freezers in snapshot.children.allObjects as! [DataSnapshot]{
-                    let freezerObject = freezers.value as? [String : AnyObject]
-                    
-                    let freezerId = freezerObject?["id"]
-                    let freezerName = freezerObject?["name"]
-                    let freezerLocation = freezerObject?["location"]
-                    
-                    let freezer = FreezerModel(id: freezerId as? String, name: freezerName as? String, location: freezerLocation as? String)
-                    
-                    //append object to the list
-                    self.freezerList.append(freezer)
-                }
-            }
-            
-            //reload data for changes to take effect
-            self.tblFreezers.reloadData() 
-        })
     }
     
     //Adds functionality to editing style
@@ -132,9 +108,8 @@ class FreezerTableViewController : UIViewController, UITableViewDataSource, UITa
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == UITableViewCell.EditingStyle.delete {
-            
             let f = freezerList[indexPath.row]
-            refFreezers.child("freezers").child(currentUserId!).child(f.id!).removeValue()
+            firebaseAPI.deleteFreezer(f: f)
         }
         
         self.tblFreezers.reloadData()
@@ -142,15 +117,21 @@ class FreezerTableViewController : UIViewController, UITableViewDataSource, UITa
     
     //Prepare the segue with the freezerdata
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! CompartmentSwipingController
         let selectedRow = sender as? Int
-    
-        destination.freezer = freezerList[selectedRow!]
+        
+        //Pass data through NavigationController to the Detail View
+        if segue.identifier == "toCompartments"  {
+            if let navController = segue.destination as? CompartmentNavigationController {
+                if let childVC = navController.topViewController as? CompartmentDetailController {
+                    childVC.freezer = freezerList[selectedRow!]
+                }
+            }
+        }
     }
     
     //When cell is clicked, load the detail view
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "toCompartmentCollectionView", sender: indexPath.row)
+        performSegue(withIdentifier: "toCompartments", sender: indexPath.row)
     }
     
 }
