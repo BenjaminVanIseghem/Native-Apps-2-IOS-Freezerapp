@@ -9,7 +9,7 @@
 class CompartmentModel{
     var id : String?
     var name : String?
-//    var items : [ItemModel]?
+    var items : [ItemModel]?
     
     init(id : String?,
          name: String?) {
@@ -17,11 +17,11 @@ class CompartmentModel{
         self.name = name;
     }
     
-//    init(id : String?,
-//         name: String?,
-//         items : [ItemModel]?){
-//        self.id = id
-//        self.name = name
-//        self.items = items
-//    }
+    init(id : String?,
+         name: String?,
+         items : [ItemModel]?){
+        self.id = id
+        self.name = name
+        self.items = items
+    }
 }

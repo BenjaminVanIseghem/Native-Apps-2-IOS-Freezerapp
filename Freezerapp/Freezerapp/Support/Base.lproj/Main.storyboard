@@ -159,11 +159,18 @@
                             <outlet property="delegate" destination="aLN-v5-LnL" id="aY6-aU-Y1Q"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="T0o-qf-bmN"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="T0o-qf-bmN">
+                        <barButtonItem key="rightBarButtonItem" title="Back" id="YNI-2U-OWG">
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="AD7-qV-9Uf" kind="show" id="Ppe-AM-sAs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gwo-90-ySv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1970" y="-876"/>
+            <point key="canvasLocation" x="1968.8" y="-876.61169415292363"/>
         </scene>
         <!--Compartment Navigation Controller-->
         <scene sceneID="Z5P-7P-tqd">
@@ -219,4 +226,7 @@
     <resources>
         <image name="snowflake" width="409.60000610351562" height="409.60000610351562"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ppe-AM-sAs"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -122,9 +122,9 @@ class FirebaseAPI {
                 //Convert all values to strings and put them inside a CompartmentModel
                 let id = info.value(forKey: "id") as? String
                 let name = info.value(forKey: "name") as? String
-                let quantity = info.value(forKey: "quantity") as? Int
+                let quantity = info.value(forKey: "quantity") as? String
                 
-                let item = ItemModel(id: id, name: name, quantity: quantity)
+                let item = ItemModel(id: id, name: name, quantity: Int(quantity!))
                 
                 //Append Item to array
                 itemList.append(item)
