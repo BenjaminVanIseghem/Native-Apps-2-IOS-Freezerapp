@@ -65,12 +65,16 @@ class FirebaseAPI {
     }
     
     //Get compartments from a freezer
-    func getCompartment(id : String, completion: @escaping ([CompartmentModel]) -> Void){
+    func getCompartments(id : String, completion: @escaping ([CompartmentModel]) -> Void){
         let refComp = ref.child("compartments").child(currentUserId!).child(id)
         
+        //initialize array of compartments to fill and return
         var compList = [CompartmentModel]()
         
         refComp.observe(DataEventType.value, with: {(snapshot) in
+            //empty the compartment array
+            compList.removeAll()
+            //iterate the snapshot
             for item in snapshot.children.allObjects as! [DataSnapshot]{
                 //Convert to NSDictionary
                 let info = item.value as! NSDictionary
@@ -108,13 +112,22 @@ class FirebaseAPI {
         ref.child("compartments").child(currentUserId!).child(freezerId).child(c.id!).removeValue()
     }
     
+    //Delete all compartments of a Freezer
+    func deleteAllCompartmentsOfFreezer(freezerId: String){
+        ref.child("compartments").child(currentUserId!).child(freezerId).removeValue()
+    }
+    
     //Get items from compartment
     func getItems(id : String, completion: @escaping ([ItemModel]) -> Void){
         let refItem = ref.child("items").child(currentUserId!).child(id)
         
+        //initialize empty array of items to fill and return
         var itemList = [ItemModel]()
         
         refItem.observe(DataEventType.value, with: {(snapshot) in
+            //empty the item array
+            itemList.removeAll()
+            //Iterate snapshot
             for item in snapshot.children.allObjects as! [DataSnapshot]{
                 //Convert to NSDictionary
                 let info = item.value as! NSDictionary
@@ -154,5 +167,16 @@ class FirebaseAPI {
     //Delete an item
     func deleteItem(compId : String, i : ItemModel){
         ref.child("items").child(currentUserId!).child(compId).child(i.id!).removeValue()
+    }
+    
+    //Delete all items of a compartment
+    func deleteAllItemsOfCompartment(compId : String){
+        ref.child("items").child(currentUserId!).child(compId).removeValue()
+    }
+    
+    //Delete all items of a freezer
+    func deleteAllItemsOfFreezer(freezerId : String){
+        let compIdList = ref.child("compartment").child(currentUserId!).value(forKey: freezerId)
+        print(compIdList as Any)
     }
 }

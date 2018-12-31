@@ -27,6 +27,8 @@
 		73BB170121D6655000B9606D /* FreezerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BB170021D6655000B9606D /* FreezerTableViewController.swift */; };
 		73BB170821D6981700B9606D /* CompartmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BB170721D6981700B9606D /* CompartmentModel.swift */; };
 		73BB170A21D6986300B9606D /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BB170921D6986300B9606D /* ItemModel.swift */; };
+		73FB9E6F21DA0D48002FE137 /* CompartmentViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FB9E6E21DA0D48002FE137 /* CompartmentViewHeader.swift */; };
+		73FB9E7121DA0D66002FE137 /* CompartmentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FB9E7021DA0D66002FE137 /* CompartmentViewCell.swift */; };
 		9B503A7F685C4C0A5326CCA5 /* Pods_FreezerappTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76B6ED2C96E3F43F83733F77 /* Pods_FreezerappTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,8 @@
 		73BB170021D6655000B9606D /* FreezerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreezerTableViewController.swift; sourceTree = "<group>"; };
 		73BB170721D6981700B9606D /* CompartmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompartmentModel.swift; sourceTree = "<group>"; };
 		73BB170921D6986300B9606D /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		73FB9E6E21DA0D48002FE137 /* CompartmentViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompartmentViewHeader.swift; sourceTree = "<group>"; };
+		73FB9E7021DA0D66002FE137 /* CompartmentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompartmentViewCell.swift; sourceTree = "<group>"; };
 		76B6ED2C96E3F43F83733F77 /* Pods_FreezerappTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FreezerappTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADF0E16BF7CA78C2461F2BE7 /* Pods-Freezerapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Freezerapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Freezerapp/Pods-Freezerapp.debug.xcconfig"; sourceTree = "<group>"; };
 		BE4F3DC6C04F03B0103C173B /* Pods-FreezerappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreezerappTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FreezerappTests/Pods-FreezerappTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -179,8 +183,10 @@
 		73BB170321D6976F00B9606D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				73FB9E7021DA0D66002FE137 /* CompartmentViewCell.swift */,
 				73BB16F821D6629C00B9606D /* FreezerTableViewCell.swift */,
 				739DF42721D80048003D2D2A /* CompartmentCollectionViewCell.swift */,
+				73FB9E6E21DA0D48002FE137 /* CompartmentViewHeader.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -499,6 +505,8 @@
 				73BB170A21D6986300B9606D /* ItemModel.swift in Sources */,
 				739DF42A21D8C925003D2D2A /* CompartmentDetailController.swift in Sources */,
 				739DF42C21D8C9CD003D2D2A /* CompartmentNavigationController.swift in Sources */,
+				73FB9E7121DA0D66002FE137 /* CompartmentViewCell.swift in Sources */,
+				73FB9E6F21DA0D48002FE137 /* CompartmentViewHeader.swift in Sources */,
 				73BB16F921D6629C00B9606D /* FreezerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
