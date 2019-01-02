@@ -8,7 +8,9 @@
 
 import UIKit
 import FirebaseUI
+import Firebase
 
+//This is the authentication page
 class ViewController: UIViewController{
 
     override func viewDidLoad() {
@@ -17,6 +19,9 @@ class ViewController: UIViewController{
     
     //Action that handles the pressing of the login button
     @IBAction func loginPressed(_ sender: UIButton) {
+        
+//        Auth.auth().signIn(withEmail: <#T##String#>, password: <#T##String#>, completion: <#T##AuthDataResultCallback?##AuthDataResultCallback?##(AuthDataResult?, Error?) -> Void#>)
+        
         //Get Auth object
         let authUI = FUIAuth.defaultAuthUI()
         

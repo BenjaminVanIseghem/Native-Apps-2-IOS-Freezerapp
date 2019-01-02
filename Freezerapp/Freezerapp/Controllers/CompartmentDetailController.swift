@@ -64,8 +64,16 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
         tableView.register(CompartmenViewHeader.self, forHeaderFooterViewReuseIdentifier: headerId)
         
         //Add navigation components
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Compartment", style: .plain, target: self, action: #selector(self.addComp))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "refresh", style: .plain, target: self, action: #selector(self.refresh))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "Add Compartment",
+            style: .plain,
+            target: self,
+            action: #selector(self.addComp))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            title: "refresh",
+            style: .plain,
+            target: self,
+            action: #selector(self.refreshAllRows))
     }
     
     //    //Declare the header for each section
@@ -106,13 +114,6 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
     
     //Declare the number of sections
     override func numberOfSections(in tableView: UITableView) -> Int {
-//        if !compList.isEmpty {
-//            return compList.count
-//        }
-//        else {
-//            return 0
-//        }
-        
         if !itemData.isEmpty {
             return itemData.count
         } else {
@@ -203,18 +204,21 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
     
     
     //Custom function to refresh all the rows
-//    func refreshAllRows(){
-//        var indexPathsToReload = [IndexPath]()
-//        //Iterate over every row in every section
-//        for section in table2DArray.indices {
-//            for row in table2DArray[section].indices {
-//                let indexPath = IndexPath(row: row, section: section)
-//                indexPathsToReload.append(indexPath)
-//            }
-//        }
-//        //Reload all the rows
+    @objc func refreshAllRows(){
+        var indexPathsToReload = [IndexPath]()
+        //Iterate over every row in every section
+        for section in itemData.indices {
+            for row in itemData[section].names.indices {
+                let indexPath = IndexPath(row: row, section: section)
+                indexPathsToReload.append(indexPath)
+            }
+        }
+        
+        let sectionSet = IndexSet(integersIn: 0..<self.itemData.count)
+        //Reload all the rows
+        self.tableView.reloadSections(sectionSet, with: .left)
 //        self.tableView.reloadRows(at: indexPathsToReload, with: .left)
-//    }
+    }
     
     //Make refresh function
     @objc func refresh(){

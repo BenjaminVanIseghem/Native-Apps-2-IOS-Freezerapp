@@ -18,32 +18,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="hTP-Sk-Un6">
-                                <rect key="frame" x="81.5" y="288.5" width="212" height="90.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the freezer app" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDP-4V-WGz">
-                                        <rect key="frame" x="0.0" y="0.0" width="212" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGx-JY-kQQ">
-                                        <rect key="frame" x="87" y="60.5" width="38" height="30"/>
-                                        <state key="normal" title="Login">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qH8-5Y-CyP"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the freezer app" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDP-4V-WGz">
+                                <rect key="frame" x="81" y="96" width="212" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGx-JY-kQQ">
+                                <rect key="frame" x="174" y="550.5" width="38" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94629050086558053" green="0.96235281229019165" blue="0.75904436993588431" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qH8-5Y-CyP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.86819983036609349" green="0.98105102777481079" blue="0.77946361437378997" alpha="0.9941941352739726" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="hTP-Sk-Un6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hZ2-oc-vzO"/>
-                            <constraint firstItem="hTP-Sk-Un6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uvh-4g-BBK"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="zDP-4V-WGz" secondAttribute="bottom" constant="550.5" id="Atp-y8-Sn2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zDP-4V-WGz" secondAttribute="trailing" constant="82" id="QxO-ge-AGw"/>
+                            <constraint firstItem="zDP-4V-WGz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="76" id="mVy-cU-5P4"/>
+                            <constraint firstItem="zDP-4V-WGz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="81" id="sc0-lK-9tg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY" colorLabel="IBBuiltInLabel-Blue"/>
                     </view>
@@ -193,6 +193,6 @@
         <image name="snowflake" width="409.60000610351562" height="409.60000610351562"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ppe-AM-sAs"/>
+        <segue reference="fSc-7l-mpu"/>
     </inferredMetricsTieBreakers>
 </document>

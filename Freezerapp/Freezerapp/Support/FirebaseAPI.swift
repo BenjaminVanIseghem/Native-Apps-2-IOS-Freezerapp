@@ -14,7 +14,7 @@ class FirebaseAPI {
     var currentUserId = Auth.auth().currentUser?.uid
     let ref = Database.database().reference()
     
-    //Get list of Freezers
+    //Get list of Freezers with "closure" statement that passes the model when finished
     func getFreezers(completion: @escaping ([FreezerModel]) -> Void){
         var freezerList = [FreezerModel]()
         
