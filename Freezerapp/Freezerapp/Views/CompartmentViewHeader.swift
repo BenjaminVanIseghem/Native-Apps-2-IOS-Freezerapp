@@ -8,13 +8,19 @@
 
 import UIKit
 
+protocol CompartmentViewHeaderDelegate {
+    func toggleSection(header: CompartmenViewHeader, section: Int)
+}
+
 class CompartmenViewHeader: UITableViewHeaderFooterView{
+    var delegate: CompartmentViewHeaderDelegate?
     var compTableViewController : CompartmentDetailController?
     var compId : String?
     var headerId : Int?
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selectHeaderView)))
         setupView()
     }
     
@@ -28,7 +34,7 @@ class CompartmenViewHeader: UITableViewHeaderFooterView{
         //set paramaters for label
         label.text = "Compartment"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.font = UIFont.boldSystemFont(ofSize: 24)
         return label
     }()
     
@@ -90,5 +96,10 @@ class CompartmenViewHeader: UITableViewHeaderFooterView{
         let quantity = itemQuantityTextField.text! as String
         
         compTableViewController?.addItem(compId: compId!, name: name, quantity: Int(quantity)!, section : headerId!)
+    }
+    
+    @objc func selectHeaderView(gesture: UITapGestureRecognizer){
+        let cell = gesture.view as! CompartmenViewHeader
+        delegate!.toggleSection(header: self, section: cell.headerId!)
     }
 }

@@ -24,13 +24,21 @@ class CompartmentViewCell: UITableViewCell{
         //set paramaters for label
         label.text = "Item"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.font = UIFont.boldSystemFont(ofSize: 18)
         return label
     }()
     
     func setUpView(){
         addSubview(nameLabel)
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": nameLabel]))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": nameLabel]))
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-16-[v0]|",
+            options: NSLayoutConstraint.FormatOptions(),
+            metrics: nil,
+            views: ["v0": nameLabel]))
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|[v0]|",
+            options: NSLayoutConstraint.FormatOptions(),
+            metrics: nil,
+            views: ["v0": nameLabel]))
     }
 }

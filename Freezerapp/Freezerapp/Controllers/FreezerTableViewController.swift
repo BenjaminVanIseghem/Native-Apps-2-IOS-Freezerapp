@@ -111,10 +111,10 @@ class FreezerTableViewController : UIViewController, UITableViewDataSource, UITa
             let f = freezerList[indexPath.row]
             firebaseAPI.deleteFreezer(f: f)
             guard f.compartments != nil else {
+                self.tblFreezers.reloadData()
                 return
             }
             firebaseAPI.deleteAllItemsOfFreezer(freezerId: f.id!)
-//            firebaseAPI.deleteCompartment(freezerId: f.id!, c: f.compartments)
         }
         
         self.tblFreezers.reloadData()

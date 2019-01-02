@@ -17,8 +17,6 @@
 		732CB69421D61F1F006C1699 /* FreezerappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732CB69321D61F1F006C1699 /* FreezerappTests.swift */; };
 		732CB69F21D61F1F006C1699 /* FreezerappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732CB69E21D61F1F006C1699 /* FreezerappUITests.swift */; };
 		732CB6AD21D61FF1006C1699 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 732CB6AC21D61FF1006C1699 /* GoogleService-Info.plist */; };
-		739DF42621D7978B003D2D2A /* CompartmentSwipingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739DF42521D7978B003D2D2A /* CompartmentSwipingController.swift */; };
-		739DF42821D80048003D2D2A /* CompartmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739DF42721D80048003D2D2A /* CompartmentCollectionViewCell.swift */; };
 		739DF42A21D8C925003D2D2A /* CompartmentDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739DF42921D8C925003D2D2A /* CompartmentDetailController.swift */; };
 		739DF42C21D8C9CD003D2D2A /* CompartmentNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739DF42B21D8C9CD003D2D2A /* CompartmentNavigationController.swift */; };
 		739DF42E21D8CCF5003D2D2A /* FirebaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739DF42D21D8CCF5003D2D2A /* FirebaseAPI.swift */; };
@@ -67,8 +65,6 @@
 		732CB69E21D61F1F006C1699 /* FreezerappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreezerappUITests.swift; sourceTree = "<group>"; };
 		732CB6A021D61F1F006C1699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		732CB6AC21D61FF1006C1699 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		739DF42521D7978B003D2D2A /* CompartmentSwipingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompartmentSwipingController.swift; sourceTree = "<group>"; };
-		739DF42721D80048003D2D2A /* CompartmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompartmentCollectionViewCell.swift; sourceTree = "<group>"; };
 		739DF42921D8C925003D2D2A /* CompartmentDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompartmentDetailController.swift; sourceTree = "<group>"; };
 		739DF42B21D8C9CD003D2D2A /* CompartmentNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompartmentNavigationController.swift; sourceTree = "<group>"; };
 		739DF42D21D8CCF5003D2D2A /* FirebaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAPI.swift; sourceTree = "<group>"; };
@@ -173,7 +169,6 @@
 			children = (
 				732CB68021D61F1D006C1699 /* ViewController.swift */,
 				73BB170021D6655000B9606D /* FreezerTableViewController.swift */,
-				739DF42521D7978B003D2D2A /* CompartmentSwipingController.swift */,
 				739DF42921D8C925003D2D2A /* CompartmentDetailController.swift */,
 				739DF42B21D8C9CD003D2D2A /* CompartmentNavigationController.swift */,
 			);
@@ -185,7 +180,6 @@
 			children = (
 				73FB9E7021DA0D66002FE137 /* CompartmentViewCell.swift */,
 				73BB16F821D6629C00B9606D /* FreezerTableViewCell.swift */,
-				739DF42721D80048003D2D2A /* CompartmentCollectionViewCell.swift */,
 				73FB9E6E21DA0D48002FE137 /* CompartmentViewHeader.swift */,
 			);
 			path = Views;
@@ -495,9 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				732CB68121D61F1D006C1699 /* ViewController.swift in Sources */,
-				739DF42621D7978B003D2D2A /* CompartmentSwipingController.swift in Sources */,
 				73BB16FB21D663A900B9606D /* FreezerModel.swift in Sources */,
-				739DF42821D80048003D2D2A /* CompartmentCollectionViewCell.swift in Sources */,
 				73BB170821D6981700B9606D /* CompartmentModel.swift in Sources */,
 				732CB67F21D61F1D006C1699 /* AppDelegate.swift in Sources */,
 				73BB170121D6655000B9606D /* FreezerTableViewController.swift in Sources */,
