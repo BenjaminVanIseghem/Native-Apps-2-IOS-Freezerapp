@@ -13,9 +13,9 @@ class ViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
+    //Action that handles the pressing of the login button
     @IBAction func loginPressed(_ sender: UIButton) {
         //Get Auth object
         let authUI = FUIAuth.defaultAuthUI()

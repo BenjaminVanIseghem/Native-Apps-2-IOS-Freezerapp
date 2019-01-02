@@ -28,6 +28,7 @@ class CompartmentViewCell: UITableViewCell{
         return label
     }()
     
+    //Set up the view, add the subview and constraints
     func setUpView(){
         addSubview(nameLabel)
         addConstraints(NSLayoutConstraint.constraints(
