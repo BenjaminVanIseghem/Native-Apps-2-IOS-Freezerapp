@@ -16,7 +16,6 @@ struct tableData{
 
 class CompartmentDetailController : UITableViewController, CompartmentViewHeaderDelegate{
     func toggleSection(header: CompartmenViewHeader, section: Int) {
-        print("it works")
         
         var indexPaths = [IndexPath]()
         for row in itemData[section].names.indices {
@@ -45,6 +44,7 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
     var titles = [String]()
     var itemNames = [String]()
     var itemQuantities = [String]()
+//    var refreshControl: UIRefreshControl?
     
     //Array of all items with header and expanded state info
     var itemData = [tableData]()
@@ -74,6 +74,9 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
             style: .plain,
             target: self,
             action: #selector(self.refreshAllRows))
+        
+        //Add the pull to refresh functionality
+        addRefreshControl()
     }
     
     //    //Declare the header for each section
@@ -215,16 +218,12 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
         }
         
         let sectionSet = IndexSet(integersIn: 0..<self.itemData.count)
+        //Stop refreshing animation
+        refreshControl?.endRefreshing()
         //Reload all the rows
         self.tableView.reloadSections(sectionSet, with: .left)
 //        self.tableView.reloadRows(at: indexPathsToReload, with: .left)
     }
-    
-    //Make refresh function
-    @objc func refresh(){
-        self.tableView.reloadData()
-    }
-    
     
     //Make a func to fetch the items of comps
     //ONLY CALL THIS WHEN COMPLIST ISN'T ZERO
@@ -296,6 +295,20 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
             itemData[index].names = itemNames
             itemData[index].quantities = itemQuantities
         }
+    }
+    
+    func addRefreshControl(){
+        refreshControl = UIRefreshControl()
+        
+        refreshControl?.tintColor = UIColor.red
+        refreshControl?.addTarget(self, action: #selector(refreshAllRows), for: .valueChanged)
+        
+        tableView.addSubview(refreshControl!)
+        
+    }
+    
+    func handleRefresh(){
+        
     }
 }
 
