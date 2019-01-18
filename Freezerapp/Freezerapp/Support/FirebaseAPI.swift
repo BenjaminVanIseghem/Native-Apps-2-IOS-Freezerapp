@@ -175,7 +175,26 @@ class FirebaseAPI {
     
     //Delete all items of a freezer
     func deleteAllItemsOfFreezer(freezerId : String){
-        let compIdList = ref.child("compartment").child(currentUserId!).value(forKey: freezerId)
-        print(compIdList as Any)
+        var compIdList = [String]()
+        
+        //Check all compartments of freezer and add their id to an array
+        ref.child("compartments").child(currentUserId!).child(freezerId)
+            .observeSingleEvent(of: DataEventType.value, with:{
+            (snapshot) in
+                for item in snapshot.children.allObjects as! [DataSnapshot]{
+                    //Convert to NSDictionary
+                    let info = item.value as! NSDictionary
+                    let id  = info["id"] as! String
+                    compIdList.append(id)
+                    self.ref.child("compartments").child(self.currentUserId!).child(freezerId).child(id).removeValue()
+                }
+                
+                //go through array of id's of compartments and delete all their items
+                for id in compIdList{
+                    self.deleteAllItemsOfCompartment(compId: id)
+                }
+        })
+        
+        
     }
 }
