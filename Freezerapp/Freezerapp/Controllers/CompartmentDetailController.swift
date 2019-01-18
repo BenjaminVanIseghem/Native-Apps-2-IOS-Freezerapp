@@ -15,6 +15,7 @@ struct tableData{
 }
 
 class CompartmentDetailController : UITableViewController, CompartmentViewHeaderDelegate{
+    //Expands or collapses the section
     func toggleSection(header: CompartmenViewHeader, section: Int) {
         
         var indexPaths = [IndexPath]()
@@ -69,11 +70,11 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
             style: .plain,
             target: self,
             action: #selector(self.addComp))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(
-            title: "refresh",
-            style: .plain,
-            target: self,
-            action: #selector(self.refreshAllRows))
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(
+//            title: "refresh",
+//            style: .plain,
+//            target: self,
+//            action: #selector(self.refreshAllRows))
         
         //Add the pull to refresh functionality
         addRefreshControl()
@@ -249,15 +250,6 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
                     
                     //insert into itemData
                     self.insertIntoItemData(itemNames: self.itemNames, itemQuantities: self.itemQuantities, index: index)
-                    
-                    //Add the itemslist to the 2D array
-                    //If the array at the index is empty, add the list of name
-                    //else change the existing list
-//                    if (self.table2DArray.count - 1) < index {
-//                        self.table2DArray.append(self.itemNames)
-//                    } else {
-//                        self.table2DArray[index] = self.itemNames
-//                    }
                     
                     //Reload the tableView to see changes
                     self.tableView.reloadData()

@@ -48,7 +48,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY" colorLabel="IBBuiltInLabel-Blue"/>
                     </view>
                     <connections>
-                        <segue destination="AD7-qV-9Uf" kind="show" identifier="goToFreezerList" id="fSc-7l-mpu"/>
+                        <segue destination="04I-sD-fcM" kind="show" identifier="startApplication" id="ove-XU-Ybc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -64,7 +64,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jyw-ko-lha">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Freezers" id="ngS-tC-DD9">
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="804-vY-Mkt">
@@ -76,7 +76,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vhb-a0-bhZ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="IDw-uj-Q5Q" detailTextLabel="ZvT-51-wl4" imageView="moy-tS-Ev0" style="IBUITableViewCellStyleSubtitle" id="q8a-To-KoQ" customClass="FreezerTableViewCell" customModule="Freezerapp" customModuleProvider="target">
@@ -127,14 +127,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TLR-Gm-Iw7"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Wx6-0Z-Aau"/>
                     <connections>
                         <outlet property="tblFreezers" destination="Vhb-a0-bhZ" id="qHU-vC-dMT"/>
-                        <segue destination="04I-sD-fcM" kind="show" identifier="toCompartments" id="HTe-nq-ItQ"/>
+                        <segue destination="aLN-v5-LnL" kind="show" identifier="toCompartmentController" id="CXK-Ed-yML"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GWg-cF-K6K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="916" y="-114.69265367316342"/>
+            <point key="canvasLocation" x="1260" y="-116"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="f44-pV-D2x">
@@ -159,40 +160,30 @@
                             <outlet property="delegate" destination="aLN-v5-LnL" id="aY6-aU-Y1Q"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="T0o-qf-bmN">
-                        <barButtonItem key="rightBarButtonItem" title="Back" id="YNI-2U-OWG">
-                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <segue destination="AD7-qV-9Uf" kind="show" id="Ppe-AM-sAs"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="T0o-qf-bmN"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gwo-90-ySv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1968.8" y="-876.61169415292363"/>
+            <point key="canvasLocation" x="2134" y="-116"/>
         </scene>
-        <!--Compartment Navigation Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="Z5P-7P-tqd">
             <objects>
-                <navigationController id="04I-sD-fcM" customClass="CompartmentNavigationController" customModule="Freezerapp" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="04I-sD-fcM" customClass="NavigationController" customModule="Freezerapp" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KAd-Ri-oT1">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="aLN-v5-LnL" kind="relationship" relationship="rootViewController" id="dCP-Oc-O4y"/>
+                        <segue destination="AD7-qV-9Uf" kind="relationship" relationship="rootViewController" id="M85-9h-fuA"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tOn-Pq-BL6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="916" y="-877"/>
+            <point key="canvasLocation" x="295" y="-116"/>
         </scene>
     </scenes>
     <resources>
         <image name="snowflake" width="409.60000610351562" height="409.60000610351562"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="fSc-7l-mpu"/>
-    </inferredMetricsTieBreakers>
 </document>

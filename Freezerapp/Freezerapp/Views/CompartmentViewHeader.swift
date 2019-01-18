@@ -8,6 +8,11 @@
 
 import UIKit
 
+/*
+    THIS CLASS IS TO DEMONSTRATE HOW TO PROGRAMMATICALLY CREATE A TABLEVIEW
+ */
+
+
 //Delegate to match an action to the toggling of the header
 protocol CompartmentViewHeaderDelegate {
     func toggleSection(header: CompartmenViewHeader, section: Int)

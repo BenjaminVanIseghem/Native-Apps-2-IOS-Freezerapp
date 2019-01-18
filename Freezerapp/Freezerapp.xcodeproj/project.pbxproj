@@ -18,7 +18,7 @@
 		732CB69F21D61F1F006C1699 /* FreezerappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732CB69E21D61F1F006C1699 /* FreezerappUITests.swift */; };
 		732CB6AD21D61FF1006C1699 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 732CB6AC21D61FF1006C1699 /* GoogleService-Info.plist */; };
 		739DF42A21D8C925003D2D2A /* CompartmentDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739DF42921D8C925003D2D2A /* CompartmentDetailController.swift */; };
-		739DF42C21D8C9CD003D2D2A /* CompartmentNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739DF42B21D8C9CD003D2D2A /* CompartmentNavigationController.swift */; };
+		739DF42C21D8C9CD003D2D2A /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739DF42B21D8C9CD003D2D2A /* NavigationController.swift */; };
 		739DF42E21D8CCF5003D2D2A /* FirebaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739DF42D21D8CCF5003D2D2A /* FirebaseAPI.swift */; };
 		73BB16F921D6629C00B9606D /* FreezerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BB16F821D6629C00B9606D /* FreezerTableViewCell.swift */; };
 		73BB16FB21D663A900B9606D /* FreezerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BB16FA21D663A900B9606D /* FreezerModel.swift */; };
@@ -66,7 +66,7 @@
 		732CB6A021D61F1F006C1699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		732CB6AC21D61FF1006C1699 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		739DF42921D8C925003D2D2A /* CompartmentDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompartmentDetailController.swift; sourceTree = "<group>"; };
-		739DF42B21D8C9CD003D2D2A /* CompartmentNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompartmentNavigationController.swift; sourceTree = "<group>"; };
+		739DF42B21D8C9CD003D2D2A /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		739DF42D21D8CCF5003D2D2A /* FirebaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAPI.swift; sourceTree = "<group>"; };
 		73BB16F821D6629C00B9606D /* FreezerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreezerTableViewCell.swift; sourceTree = "<group>"; };
 		73BB16FA21D663A900B9606D /* FreezerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreezerModel.swift; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 				732CB68021D61F1D006C1699 /* ViewController.swift */,
 				73BB170021D6655000B9606D /* FreezerTableViewController.swift */,
 				739DF42921D8C925003D2D2A /* CompartmentDetailController.swift */,
-				739DF42B21D8C9CD003D2D2A /* CompartmentNavigationController.swift */,
+				739DF42B21D8C9CD003D2D2A /* NavigationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -496,7 +496,7 @@
 				739DF42E21D8CCF5003D2D2A /* FirebaseAPI.swift in Sources */,
 				73BB170A21D6986300B9606D /* ItemModel.swift in Sources */,
 				739DF42A21D8C925003D2D2A /* CompartmentDetailController.swift in Sources */,
-				739DF42C21D8C9CD003D2D2A /* CompartmentNavigationController.swift in Sources */,
+				739DF42C21D8C9CD003D2D2A /* NavigationController.swift in Sources */,
 				73FB9E7121DA0D66002FE137 /* CompartmentViewCell.swift in Sources */,
 				73FB9E6F21DA0D48002FE137 /* CompartmentViewHeader.swift in Sources */,
 				73BB16F921D6629C00B9606D /* FreezerTableViewCell.swift in Sources */,

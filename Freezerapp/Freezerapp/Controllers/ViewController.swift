@@ -54,7 +54,7 @@ extension ViewController : FUIAuthDelegate {
         
         //authDataResult?.user.uid  --> code for finding the id of the user
         
-        performSegue(withIdentifier: "goToFreezerList", sender: self)
+        performSegue(withIdentifier: "startApplication", sender: self)
     }
 }
 

@@ -125,18 +125,17 @@ class FreezerTableViewController : UIViewController, UITableViewDataSource, UITa
         let selectedRow = sender as? Int
         
         //Pass data through NavigationController to the Detail View
-        if segue.identifier == "toCompartments"  {
-            if let navController = segue.destination as? CompartmentNavigationController {
-                if let childVC = navController.topViewController as? CompartmentDetailController {
-                    childVC.freezer = freezerList[selectedRow!]
-                }
+        if segue.identifier == "toCompartmentController"  {
+            if let controller = segue.destination as? CompartmentDetailController {
+                controller.freezer = freezerList[selectedRow!]
+                
             }
         }
     }
     
     //When cell is clicked, load the detail view
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "toCompartments", sender: indexPath.row)
+        performSegue(withIdentifier: "toCompartmentController", sender: indexPath.row)
     }
     
 }
