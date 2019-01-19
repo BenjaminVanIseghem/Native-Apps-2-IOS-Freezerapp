@@ -54,20 +54,31 @@ class CompartmenViewHeader: UITableViewHeaderFooterView{
         return button
     }()
     
+    //Create button to delete the compartment
+    let deleteCompartmentButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Delete", for: [])
+        //Make sure the button resizes according to the constraints
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     func setupView(){
         //Add the views to the main view
         addSubview(nameLabel)
         addSubview(addItemButton)
+        addSubview(deleteCompartmentButton)
         
-        //Add an action to the button
+        //Add an action to the buttons
         addItemButton.addTarget(self, action: #selector(CompartmenViewHeader.addItem), for: .touchUpInside)
+        deleteCompartmentButton.addTarget(self, action: #selector(CompartmenViewHeader.deleteCompartment), for: .touchUpInside)
         
         //Add the horizontal constraints for the label and the button
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-16-[v0]-8-[v1(80)]-8-|",
+            withVisualFormat: "H:|-16-[v0]-8-[v1(80)]-8-[v2]-8-|",
             options: NSLayoutConstraint.FormatOptions(),
             metrics: nil,
-            views: ["v0": nameLabel, "v1": addItemButton]))
+            views: ["v0": nameLabel, "v1": addItemButton, "v2": deleteCompartmentButton]))
         
         //Add the vertical constraints for the label and the button
         addConstraints(NSLayoutConstraint.constraints(
@@ -77,6 +88,11 @@ class CompartmenViewHeader: UITableViewHeaderFooterView{
             options: NSLayoutConstraint.FormatOptions(),
             metrics: nil,
             views: ["v0": addItemButton]))
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|[v0]|",
+            options: NSLayoutConstraint.FormatOptions(),
+            metrics: nil,
+            views: ["v0": deleteCompartmentButton]))
     }
     
     //Text fields inside the alert that is called by the add button
@@ -125,6 +141,25 @@ class CompartmenViewHeader: UITableViewHeaderFooterView{
     @objc func selectHeaderView(gesture: UITapGestureRecognizer){
         let cell = gesture.view as! CompartmenViewHeader
         delegate!.toggleSection(header: self, section: cell.headerId!)
+    }
+    
+    @objc func deleteCompartment(){
+        //Initialize alert to spawn
+        let alert = UIAlertController(title: "Delete Compartment", message: "Are you sure you want to delete the compartment?", preferredStyle: .alert)
+        
+        //Initialize the actions
+        let deleteAction = UIAlertAction(title: "Delete", style: .default, handler: self.delete)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        //Add the actions to the alert
+        alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
+        
+        compTableViewController?.present(alert, animated : true, completion : nil)
+    }
+    
+    func delete(alert: UIAlertAction) {
+        compTableViewController?.deleteCompartment(compId: compId!, position: headerId!)
     }
 }
 

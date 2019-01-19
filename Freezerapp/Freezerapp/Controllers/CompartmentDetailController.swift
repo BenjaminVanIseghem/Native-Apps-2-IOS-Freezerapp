@@ -10,8 +10,10 @@ import UIKit
 //Struct to keep metadata about the expanded state of headers
 struct tableData{
     var isExpanded = Bool()
+    var headerName = String()
     var names = [String]()
     var quantities = [String]()
+    var compId = String()
 }
 
 class CompartmentDetailController : UITableViewController, CompartmentViewHeaderDelegate{
@@ -82,18 +84,18 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
     
     //    //Declare the header for each section
         override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-            if compList.count == titles.count {
+            if itemData.count > section{
                 let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: headerId) as! CompartmenViewHeader
 
                 //Set parameters for the header
-                header.nameLabel.text = titles[section]
+                header.nameLabel.text = itemData[section].headerName
                 header.backgroundView?.backgroundColor = .lightGray
                 
                 header.delegate = self
                 //Set the TableViewController from the header
                 header.compTableViewController = self
                 //Set the compId for each header
-                header.compId = compList[section].id
+                header.compId = itemData[section].compId
                 //Set the headerId for each header to know the position in the 2D array
                 header.headerId = section
                 
@@ -108,12 +110,12 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
     
     //Set the height for each header
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
+        return 50
     }
     
     //Set the height of each row
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 30
+        return 40
     }
     
     //Declare the number of sections
@@ -205,6 +207,13 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
         //Add the item to Firebase
         firebaseAPI.uploadItem(compId: compId, name: name, quantity: quantity)
     }
+    //Delete compartment with ID
+    func deleteCompartment(compId: String, position: Int){
+        firebaseAPI.deleteAllItemsOfCompartment(compId: compId)
+        firebaseAPI.deleteCompartment(freezerId: (freezer?.id)!, c: compId)
+        itemData.remove(at: position)
+        self.tableView.reloadData()
+    }
     
     
     //Custom function to refresh all the rows
@@ -249,11 +258,10 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
                     })
                     
                     //insert into itemData
-                    self.insertIntoItemData(itemNames: self.itemNames, itemQuantities: self.itemQuantities, index: index)
+                    self.insertIntoItemData(itemNames: self.itemNames, itemQuantities: self.itemQuantities, index: index, headerName: comp.name!, compId: comp.id!)
                     
                     //Reload the tableView to see changes
                     self.tableView.reloadData()
-                    //self.refreshAllRows()
                 }
             }
         }
@@ -262,6 +270,7 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
         }
     }
     
+    //Function to fetch the compartments of the chosen freezer
     func fetchCompartments(){
         firebaseAPI.getCompartments(id: (freezer?.id)!){
             compList in
@@ -280,9 +289,9 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
         }
     }
     
-    func insertIntoItemData(itemNames: [String], itemQuantities: [String], index: Int){
+    func insertIntoItemData(itemNames: [String], itemQuantities: [String], index: Int, headerName: String, compId: String){
         if (itemData.count - 1) < index {
-            itemData.append(tableData(isExpanded: true, names: itemNames, quantities: itemQuantities))
+            itemData.append(tableData(isExpanded: true, headerName: headerName, names: itemNames, quantities: itemQuantities, compId: compId))
         } else {
             itemData[index].names = itemNames
             itemData[index].quantities = itemQuantities
@@ -298,22 +307,10 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
         tableView.addSubview(refreshControl!)
         
     }
-    
-    func handleRefresh(){
-        
-    }
 }
 
 /*
  DON'T FORGET WHEN ADDING OBSERVERS
  -> Empty all temp arrays
  -> Make sure it works asynchronous
- */
-
-//TODO
-/*
-    Create swiping animation to delete items
-    Create delete button to delete an entire compartment with all its items
- 
-    Animation to make the app fancy
  */

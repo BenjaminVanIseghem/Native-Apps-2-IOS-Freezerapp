@@ -28,18 +28,39 @@ class CompartmentViewCell: UITableViewCell{
         return label
     }()
     
-    //Set up the view, add the subview and constraints
+    //Create label for item quantity
+    let quantityLabel: UILabel = {
+        let label = UILabel()
+        //set paramaters for label
+        label.text = "Quantity"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        return label
+    }()
+    
+    //Set up the view, add the subviews and constraints
     func setUpView(){
         addSubview(nameLabel)
-        addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-16-[v0]|",
-            options: NSLayoutConstraint.FormatOptions(),
-            metrics: nil,
-            views: ["v0": nameLabel]))
+        addSubview(quantityLabel)
+//        addConstraints(NSLayoutConstraint.constraints(
+//            withVisualFormat: "H:|-16-[v0]|",
+//            options: NSLayoutConstraint.FormatOptions(),
+//            metrics: nil,
+//            views: ["v0": nameLabel]))
         addConstraints(NSLayoutConstraint.constraints(
             withVisualFormat: "V:|[v0]|",
             options: NSLayoutConstraint.FormatOptions(),
             metrics: nil,
             views: ["v0": nameLabel]))
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-16-[v1]-[v0]-16-|",
+            options: NSLayoutConstraint.FormatOptions(),
+            metrics: nil,
+            views: ["v0": quantityLabel, "v1": nameLabel]))
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|[v0]|",
+            options: NSLayoutConstraint.FormatOptions(),
+            metrics: nil,
+            views: ["v0": quantityLabel]))
     }
 }

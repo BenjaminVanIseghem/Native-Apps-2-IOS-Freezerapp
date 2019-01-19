@@ -107,8 +107,8 @@ class FirebaseAPI {
     }
     
     //Delete a compartment
-    func deleteCompartment(freezerId : String, c : CompartmentModel){
-        ref.child("compartments").child(currentUserId!).child(freezerId).child(c.id!).removeValue()
+    func deleteCompartment(freezerId : String, c : String){
+        ref.child("compartments").child(currentUserId!).child(freezerId).child(c).removeValue()
     }
     
     //Delete all compartments of a Freezer
