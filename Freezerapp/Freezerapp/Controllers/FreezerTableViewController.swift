@@ -42,6 +42,9 @@ class FreezerTableViewController : UIViewController, UITableViewDataSource, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Freezers"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
         firebaseAPI.getFreezers(){
             freezerList in
             self.freezerList = freezerList

@@ -143,8 +143,9 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
 
         if !itemData.isEmpty {
             let title = itemData[indexPath.section].names[indexPath.row]
-//            let quantity = itemData[indexPath.section].quantities[indexPath.row]
+            let quantity = itemData[indexPath.section].quantities[indexPath.row]
             cell.nameLabel.text = title
+            cell.quantityLabel.text = quantity
         }
         
         return cell
@@ -232,7 +233,6 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
         refreshControl?.endRefreshing()
         //Reload all the rows
         self.tableView.reloadSections(sectionSet, with: .left)
-//        self.tableView.reloadRows(at: indexPathsToReload, with: .left)
     }
     
     //Make a func to fetch the items of comps
@@ -298,6 +298,8 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
         }
     }
     
+    //UI object to control the refresh
+    //This is used for the pull down to refresh functionality
     func addRefreshControl(){
         refreshControl = UIRefreshControl()
         
@@ -305,7 +307,6 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
         refreshControl?.addTarget(self, action: #selector(refreshAllRows), for: .valueChanged)
         
         tableView.addSubview(refreshControl!)
-        
     }
 }
 

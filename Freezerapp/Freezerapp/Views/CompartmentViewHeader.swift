@@ -48,18 +48,45 @@ class CompartmenViewHeader: UITableViewHeaderFooterView{
     //Create button to add item to this compartment
     let addItemButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Add", for: [])
+        let image = UIImage(named: "add_50")
+
         //Make sure the button resizes according to the constraints
         button.translatesAutoresizingMaskIntoConstraints = false
+        //Add the image and scaling options
+        button.setImage(image, for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
+        return button
+    }()
+    
+    //Create button to edit the compartment
+    let editCompartmentButton: UIButton = {
+        let button = UIButton(type: .system)
+        let image = UIImage(named: "edit_50")
+        
+        //Make sure the button resizes according to the constraints
+        button.translatesAutoresizingMaskIntoConstraints = false
+        //Add the image and scaling options
+        button.setImage(image, for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
         return button
     }()
     
     //Create button to delete the compartment
     let deleteCompartmentButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Delete", for: [])
+        let image = UIImage(named: "trash_50")
+
         //Make sure the button resizes according to the constraints
         button.translatesAutoresizingMaskIntoConstraints = false
+        //Add the image and scaling options
+        button.setImage(image, for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
         return button
     }()
     
@@ -67,6 +94,7 @@ class CompartmenViewHeader: UITableViewHeaderFooterView{
         //Add the views to the main view
         addSubview(nameLabel)
         addSubview(addItemButton)
+        addSubview(editCompartmentButton)
         addSubview(deleteCompartmentButton)
         
         //Add an action to the buttons
@@ -75,10 +103,10 @@ class CompartmenViewHeader: UITableViewHeaderFooterView{
         
         //Add the horizontal constraints for the label and the button
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-16-[v0]-8-[v1(80)]-8-[v2]-8-|",
+            withVisualFormat: "H:|-16-[v0]-[v1(24)]-16-[v2(24)]-16-[v3(24)]-8-|",
             options: NSLayoutConstraint.FormatOptions(),
             metrics: nil,
-            views: ["v0": nameLabel, "v1": addItemButton, "v2": deleteCompartmentButton]))
+            views: ["v0": nameLabel, "v1": addItemButton, "v2": editCompartmentButton, "v3": deleteCompartmentButton]))
         
         //Add the vertical constraints for the label and the button
         addConstraints(NSLayoutConstraint.constraints(
@@ -88,6 +116,11 @@ class CompartmenViewHeader: UITableViewHeaderFooterView{
             options: NSLayoutConstraint.FormatOptions(),
             metrics: nil,
             views: ["v0": addItemButton]))
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|[v0]|",
+            options: NSLayoutConstraint.FormatOptions(),
+            metrics: nil,
+            views: ["v0": editCompartmentButton]))
         addConstraints(NSLayoutConstraint.constraints(
             withVisualFormat: "V:|[v0]|",
             options: NSLayoutConstraint.FormatOptions(),

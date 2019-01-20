@@ -63,20 +63,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jyw-ko-lha">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="Freezers" id="ngS-tC-DD9">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="804-vY-Mkt">
-                                            <connections>
-                                                <action selector="addButtonPressed:" destination="AD7-qV-9Uf" id="DF1-U5-FnJ"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vhb-a0-bhZ">
-                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="IDw-uj-Q5Q" detailTextLabel="ZvT-51-wl4" imageView="moy-tS-Ev0" style="IBUITableViewCellStyleSubtitle" id="q8a-To-KoQ" customClass="FreezerTableViewCell" customModule="Freezerapp" customModuleProvider="target">
@@ -117,17 +105,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Vhb-a0-bhZ" firstAttribute="leading" secondItem="TLR-Gm-Iw7" secondAttribute="leading" id="2Q4-72-uoX"/>
-                            <constraint firstItem="jyw-ko-lha" firstAttribute="top" secondItem="TLR-Gm-Iw7" secondAttribute="top" id="JdQ-Ya-rG7"/>
-                            <constraint firstItem="jyw-ko-lha" firstAttribute="trailing" secondItem="TLR-Gm-Iw7" secondAttribute="trailing" id="bfS-2R-m1y"/>
+                            <constraint firstItem="Vhb-a0-bhZ" firstAttribute="top" secondItem="TLR-Gm-Iw7" secondAttribute="top" id="R6U-lE-4oR"/>
                             <constraint firstItem="Vhb-a0-bhZ" firstAttribute="trailing" secondItem="TLR-Gm-Iw7" secondAttribute="trailing" id="qoB-Fg-G31"/>
-                            <constraint firstItem="Vhb-a0-bhZ" firstAttribute="top" secondItem="jyw-ko-lha" secondAttribute="bottom" id="tZe-c2-r2L"/>
                             <constraint firstItem="Vhb-a0-bhZ" firstAttribute="bottom" secondItem="TLR-Gm-Iw7" secondAttribute="bottom" id="uDp-Vj-sZW"/>
-                            <constraint firstItem="jyw-ko-lha" firstAttribute="leading" secondItem="TLR-Gm-Iw7" secondAttribute="leading" id="wM5-PU-01X"/>
-                            <constraint firstItem="Vhb-a0-bhZ" firstAttribute="top" secondItem="jyw-ko-lha" secondAttribute="bottom" id="yqL-cR-VnH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TLR-Gm-Iw7"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Wx6-0Z-Aau"/>
+                    <navigationItem key="navigationItem" id="Wx6-0Z-Aau">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rd6-9R-rhp">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="AD7-qV-9Uf" id="y1d-cu-x3K"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tblFreezers" destination="Vhb-a0-bhZ" id="qHU-vC-dMT"/>
                         <segue destination="aLN-v5-LnL" kind="show" identifier="toCompartmentController" id="CXK-Ed-yML"/>
@@ -135,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GWg-cF-K6K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1260" y="-116"/>
+            <point key="canvasLocation" x="1260" y="-116.49175412293854"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="f44-pV-D2x">
