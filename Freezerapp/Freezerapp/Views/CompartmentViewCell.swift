@@ -9,6 +9,13 @@
 import UIKit
 
 class CompartmentViewCell: UITableViewCell{
+    //Parameters initialized in the controller
+    var compTableViewController : CompartmentDetailController?
+    var section : Int?
+    var row : Int?
+    var compId : String?
+    var itemId : String?
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUpView()
@@ -84,6 +91,10 @@ class CompartmentViewCell: UITableViewCell{
         addSubview(addButton)
         addSubview(minusButton)
         addSubview(editItemButton)
+        
+        //Button functionality
+        editItemButton.addTarget(self, action: #selector(CompartmentViewCell.editItemName), for: .touchUpInside)
+        
         //Horizontal constraints
         addConstraints(NSLayoutConstraint.constraints(
             withVisualFormat: "H:|-16-[v1]-16-[v3(24)]-[v0]-[v2(24)]-16-[v4(24)]-16-|",
@@ -116,6 +127,52 @@ class CompartmentViewCell: UITableViewCell{
             options: NSLayoutConstraint.FormatOptions(),
             metrics: nil,
             views: ["v0": editItemButton]))
+    }
+    
+    //Text field inside the alert that is called by the edit button
+    var itemNameTextField : UITextField!
+    func itemNameTextField(textField : UITextField!){
+        itemNameTextField = textField
+        itemNameTextField.placeholder = "Item name"
+    }
+    
+    //Objective C function to edit an item name
+    //Spawns an alert box to edit data
+    @objc func editItemName(){
+        //Initialize alert to spawn
+        let alert = UIAlertController(title: "Edit Item", message: "Change the name of the item?", preferredStyle: .alert)
+        
+        //Initialize the actions
+        let editAction = UIAlertAction(title: "Edit", style: .default, handler: self.edit)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        //Add the actions to the alert
+        alert.addAction(editAction)
+        alert.addAction(cancelAction)
+        
+        //Add textfield to the alert to pass string
+        alert.addTextField(configurationHandler: itemNameTextField)
+        
+        compTableViewController?.present(alert, animated : true, completion : nil)
+    }
+    //Edit item name
+    func edit(alert: UIAlertAction){
+        let name = itemNameTextField.text! as String
+        
+        compTableViewController?.editItemName(
+            compId: compId!,
+            itemId: itemId!,
+            itemName: name,
+            section: section!,
+            row: row!
+        )
+    }
+    //Add one to item quantity
+    @objc func plusOne(){
+        
+    }
+    //Substract one from item quantity
+    @objc func minusOne(){
         
     }
 }

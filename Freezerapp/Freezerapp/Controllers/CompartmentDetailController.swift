@@ -13,6 +13,7 @@ struct tableData{
     var headerName = String()
     var names = [String]()
     var quantities = [String]()
+    var itemIds = [String]()
     var compId = String()
 }
 
@@ -47,6 +48,7 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
     var titles = [String]()
     var itemNames = [String]()
     var itemQuantities = [String]()
+    var itemIds = [String]()
 //    var refreshControl: UIRefreshControl?
     
     //Array of all items with header and expanded state info
@@ -141,11 +143,17 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! CompartmentViewCell
 
+        cell.row = indexPath.row
+        cell.section = indexPath.section
+        cell.compTableViewController = self
+        
         if !itemData.isEmpty {
             let title = itemData[indexPath.section].names[indexPath.row]
             let quantity = itemData[indexPath.section].quantities[indexPath.row]
             cell.nameLabel.text = title
             cell.quantityLabel.text = quantity
+            cell.compId = itemData[indexPath.section].compId
+            cell.itemId = itemData[indexPath.section].itemIds[indexPath.row]
         }
         
         return cell
@@ -213,7 +221,6 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
         firebaseAPI.deleteAllItemsOfCompartment(compId: compId)
         firebaseAPI.deleteCompartment(freezerId: (freezer?.id)!, c: compId)
         itemData.remove(at: position)
-        self.tableView.reloadData()
     }
     
     
@@ -239,8 +246,6 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
     //ONLY CALL THIS WHEN COMPLIST ISN'T ZERO
     func fetchItems(){
         if !compList.isEmpty{
-            //Empty array to refill
-//            self.table2DArray.removeAll()
             for (index, comp) in compList.enumerated() {
                 //Call observer for items
                 self.firebaseAPI.getItems(id: comp.id!){
@@ -250,15 +255,25 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
                     self.freezer?.compartments?[index].items = itemList
                     //Clear the list of names every iteration
                     self.itemNames.removeAll()
+                    self.itemQuantities.removeAll()
+                    self.itemIds.removeAll()
                     //Loop itemList to add each itemName to a list
                     itemList.forEach({
                         (item) in
                         self.itemNames.append(item.name!)
                         self.itemQuantities.append(String(item.quantity!))
+                        self.itemIds.append(item.id!)
                     })
                     
                     //insert into itemData
-                    self.insertIntoItemData(itemNames: self.itemNames, itemQuantities: self.itemQuantities, index: index, headerName: comp.name!, compId: comp.id!)
+                    self.insertIntoItemData(
+                        itemNames: self.itemNames,
+                        itemQuantities: self.itemQuantities,
+                        index: index,
+                        headerName: comp.name!,
+                        compId: comp.id!,
+                        itemIds: self.itemIds
+                    )
                     
                     //Reload the tableView to see changes
                     self.tableView.reloadData()
@@ -289,12 +304,14 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
         }
     }
     
-    func insertIntoItemData(itemNames: [String], itemQuantities: [String], index: Int, headerName: String, compId: String){
+    //Insert all the names, quantities, id, in the itemData array
+    func insertIntoItemData(itemNames: [String], itemQuantities: [String], index: Int, headerName: String, compId: String, itemIds: [String]){
         if (itemData.count - 1) < index {
-            itemData.append(tableData(isExpanded: true, headerName: headerName, names: itemNames, quantities: itemQuantities, compId: compId))
+            itemData.append(tableData(isExpanded: true, headerName: headerName, names: itemNames, quantities: itemQuantities, itemIds: itemIds, compId: compId))
         } else {
             itemData[index].names = itemNames
             itemData[index].quantities = itemQuantities
+            itemData[index].itemIds = itemIds
         }
     }
     
@@ -307,6 +324,18 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
         refreshControl?.addTarget(self, action: #selector(refreshAllRows), for: .valueChanged)
         
         tableView.addSubview(refreshControl!)
+    }
+    
+    //Edit a compartment name
+    func editCompartment(compId: String, compName: String, position: Int){
+        firebaseAPI.editCompartment(freezerId: (freezer?.id)!, compId: compId, compName: compName)
+        itemData[position].headerName = compName
+    }
+    
+    //Edit an item name
+    func editItemName(compId: String, itemId: String, itemName: String, section: Int, row : Int){
+        firebaseAPI.editItemName(compId: compId, itemId: itemId, itemName: itemName)
+        itemData[section].names[row] = itemName
     }
 }
 

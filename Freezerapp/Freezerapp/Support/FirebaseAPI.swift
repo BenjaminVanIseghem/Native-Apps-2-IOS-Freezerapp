@@ -194,7 +194,35 @@ class FirebaseAPI {
                     self.deleteAllItemsOfCompartment(compId: id)
                 }
         })
-        
-        
+    }
+    
+    //Edit a compartment name in the firebase database
+    func editCompartment(freezerId: String, compId: String, compName: String){
+        ref.child("compartments").child(currentUserId!).child(freezerId).child(compId)
+            .updateChildValues(["name": compName])
+    }
+    //Edit a freezer name in the firebase database
+    func editFreezer(freezerId: String, freezerName: String){
+        ref.child("freezers").child(currentUserId!).child(freezerId)
+            .updateChildValues(["name": freezerName])
+    }
+    //Edit a item name in the firebase database
+    func editItemName(compId: String, itemId: String, itemName: String){
+        ref.child("items").child(currentUserId!).child(compId).child(itemId)
+            .updateChildValues(["name": itemName])
+    }
+    //Substract quantity from item
+    func substractOne(compId: String, itemId: String, itemQuantity: String){
+        let q = Int(itemQuantity)! - 1
+        let qStr = String(q)
+        ref.child("items").child(currentUserId!).child(compId).child(itemId)
+            .updateChildValues(["quantity": qStr])
+    }
+    //Add quantity from item
+    func addOne(compId: String, itemId: String, itemQuantity: String){
+        let q = Int(itemQuantity)! + 1
+        let qStr = String(q)
+        ref.child("items").child(currentUserId!).child(compId).child(itemId)
+            .updateChildValues(["quantity": qStr])
     }
 }

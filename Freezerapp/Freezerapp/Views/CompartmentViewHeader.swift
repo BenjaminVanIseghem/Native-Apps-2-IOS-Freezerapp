@@ -99,6 +99,7 @@ class CompartmenViewHeader: UITableViewHeaderFooterView{
         
         //Add an action to the buttons
         addItemButton.addTarget(self, action: #selector(CompartmenViewHeader.addItem), for: .touchUpInside)
+        editCompartmentButton.addTarget(self, action: #selector(CompartmenViewHeader.editCompartment), for: .touchUpInside)
         deleteCompartmentButton.addTarget(self, action: #selector(CompartmenViewHeader.deleteCompartment), for: .touchUpInside)
         
         //Add the horizontal constraints for the label and the button
@@ -131,6 +132,7 @@ class CompartmenViewHeader: UITableViewHeaderFooterView{
     //Text fields inside the alert that is called by the add button
     var itemNameTextField : UITextField!
     var itemQuantityTextField : UITextField!
+    var compNameTextField : UITextField!
     
     func itemNameTextField(textField : UITextField!){
         itemNameTextField = textField
@@ -139,6 +141,10 @@ class CompartmenViewHeader: UITableViewHeaderFooterView{
     func itemQuantityTextField(textField : UITextField){
         itemQuantityTextField = textField
         itemQuantityTextField.placeholder = "Quantity"
+    }
+    func compNameTextField(textField : UITextField){
+        compNameTextField = textField
+        compNameTextField.placeholder = "Compartment Name"
     }
     
     //Objective C function to add an item via an alert
@@ -176,6 +182,7 @@ class CompartmenViewHeader: UITableViewHeaderFooterView{
         delegate!.toggleSection(header: self, section: cell.headerId!)
     }
     
+    //Objective C function to spawn an alert to delete the compartment
     @objc func deleteCompartment(){
         //Initialize alert to spawn
         let alert = UIAlertController(title: "Delete Compartment", message: "Are you sure you want to delete the compartment?", preferredStyle: .alert)
@@ -191,8 +198,34 @@ class CompartmenViewHeader: UITableViewHeaderFooterView{
         compTableViewController?.present(alert, animated : true, completion : nil)
     }
     
+    //Actual deletion of compartment via the controller
     func delete(alert: UIAlertAction) {
         compTableViewController?.deleteCompartment(compId: compId!, position: headerId!)
+    }
+    
+    //Objective C function to edit a compartment
+    //Spawns an alert box to edit data
+    @objc func editCompartment(){
+        //Initialize alert to spawn
+        let alert = UIAlertController(title: "Edit Compartment", message: "Change the name of the compartment?", preferredStyle: .alert)
+        
+        //Initialize the actions
+        let editAction = UIAlertAction(title: "Edit", style: .default, handler: self.edit)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        //Add the actions to the alert
+        alert.addAction(editAction)
+        alert.addAction(cancelAction)
+        
+        //Add textfield to the alert to pass string
+        alert.addTextField(configurationHandler: compNameTextField)
+        
+        compTableViewController?.present(alert, animated : true, completion : nil)
+    }
+    
+    func edit(alert: UIAlertAction){
+        let name = compNameTextField.text! as String
+        compTableViewController?.editCompartment(compId: compId!, compName: name, position: headerId!);
     }
 }
 
