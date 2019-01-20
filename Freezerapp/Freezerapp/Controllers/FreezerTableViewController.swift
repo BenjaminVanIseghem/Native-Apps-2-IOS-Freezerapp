@@ -130,8 +130,8 @@ class FreezerTableViewController : UIViewController, UITableViewDataSource, UITa
         
         if editingStyle == UITableViewCell.EditingStyle.delete {
             let f = freezerList[indexPath.row]
-            firebaseAPI.deleteFreezer(f: f)
             firebaseAPI.deleteAllItemsOfFreezer(freezerId: f.id!)
+            firebaseAPI.deleteFreezer(f: f)
         }
         
         self.tblFreezers.reloadData()

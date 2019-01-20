@@ -271,6 +271,9 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
                     itemList in
                     //Add the items to the compartment
                     comp.items = itemList
+                    guard (self.freezer?.compartments?.count)! > index else{
+                        return
+                    }
                     self.freezer?.compartments?[index].items = itemList
                     //Clear the list of names every iteration
                     self.itemNames.removeAll()
