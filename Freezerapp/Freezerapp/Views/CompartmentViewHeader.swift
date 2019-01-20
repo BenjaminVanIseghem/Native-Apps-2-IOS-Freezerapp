@@ -170,6 +170,12 @@ class CompartmenViewHeader: UITableViewHeaderFooterView{
     
     //Function called by the alert to handle the save
     func save(alert : UIAlertAction){
+        guard !(itemNameTextField.text?.isEmpty)! else {
+            return
+        }
+        guard !(itemQuantityTextField.text?.isEmpty)! else {
+            return
+        }
         let name = itemNameTextField.text! as String
         let quantity = itemQuantityTextField.text! as String
         
@@ -224,6 +230,9 @@ class CompartmenViewHeader: UITableViewHeaderFooterView{
     }
     
     func edit(alert: UIAlertAction){
+        guard !(compNameTextField.text?.isEmpty)! else{
+            return
+        }
         let name = compNameTextField.text! as String
         compTableViewController?.editCompartment(compId: compId!, compName: name, position: headerId!);
     }

@@ -160,6 +160,9 @@ class CompartmentViewCell: UITableViewCell{
     }
     //Edit item name
     func edit(alert: UIAlertAction){
+        guard !itemNameTextField.text!.isEmpty else {
+            return
+        }
         let name = itemNameTextField.text! as String
         
         compTableViewController?.editItemName(
