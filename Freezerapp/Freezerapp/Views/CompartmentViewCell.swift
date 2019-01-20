@@ -100,7 +100,7 @@ class CompartmentViewCell: UITableViewCell{
         
         //Horizontal constraints
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-16-[v1]-16-[v3(24)]-[v0]-[v2(24)]-16-[v4(24)]-16-|",
+            withVisualFormat: "H:|-16-[v1]-16-[v3(24)]-[v0(24)]-[v2(24)]-16-[v4(24)]-16-|",
             options: NSLayoutConstraint.FormatOptions(),
             metrics: nil,
             views: ["v0": quantityLabel, "v1": nameLabel, "v2": addButton, "v3": minusButton, "v4": editItemButton]))

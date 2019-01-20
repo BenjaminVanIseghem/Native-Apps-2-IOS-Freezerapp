@@ -202,9 +202,9 @@ class FirebaseAPI {
             .updateChildValues(["name": compName])
     }
     //Edit a freezer name in the firebase database
-    func editFreezer(freezerId: String, freezerName: String){
+    func editFreezer(freezerId: String, freezerName: String, freezerLocation: String){
         ref.child("freezers").child(currentUserId!).child(freezerId)
-            .updateChildValues(["name": freezerName])
+            .updateChildValues(["name": freezerName, "location": freezerLocation])
     }
     //Edit a item name in the firebase database
     func editItemName(compId: String, itemId: String, itemName: String){

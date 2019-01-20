@@ -92,6 +92,14 @@
                                                     <rect key="frame" x="15" y="0.0" width="44" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1L-Tc-l24">
+                                                    <rect key="frame" x="287" y="0.0" width="60" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="edit_50"/>
+                                                    <connections>
+                                                        <action selector="editFreezer:" destination="q8a-To-KoQ" eventType="touchUpInside" id="Ji4-iI-ugF"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -174,6 +182,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="edit_50" width="37.5" height="37.5"/>
         <image name="snowflake" width="409.60000610351562" height="409.60000610351562"/>
     </resources>
 </document>

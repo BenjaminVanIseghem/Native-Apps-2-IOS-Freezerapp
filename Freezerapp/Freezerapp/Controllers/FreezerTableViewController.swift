@@ -66,6 +66,8 @@ class FreezerTableViewController : UIViewController, UITableViewDataSource, UITa
         
         cell.textLabel?.text = freezer.name
         cell.detailTextLabel?.text = freezer.location
+        cell.controller = self
+        cell.id = freezer.id
         
         return cell
     }
@@ -104,6 +106,14 @@ class FreezerTableViewController : UIViewController, UITableViewDataSource, UITa
         //Reload the View
         self.tblFreezers.reloadData()
         
+    }
+    //Edit freezer name and location
+    func editFreezer(freezerId: String, freezerName: String, freezerLocation: String){
+        //Call API
+        firebaseAPI.editFreezer(freezerId: freezerId, freezerName: freezerName, freezerLocation: freezerLocation)
+        
+        //Reload the View
+        self.tblFreezers.reloadData()
     }
     
     //Adds functionality to editing style
