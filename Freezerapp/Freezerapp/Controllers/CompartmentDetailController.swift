@@ -101,6 +101,14 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
                 //Set the headerId for each header to know the position in the 2D array
                 header.headerId = section
                 
+                if section % 2 == 0 {
+                    let customColor = UIColor(red: 160/255.0, green: 206/255.0, blue: 217/255.0, alpha: 1.0)
+                    header.backgroundColor = customColor
+                } else {
+                    let customColor = UIColor(red: 102/255.0, green: 132/255.0, blue: 139/255.0, alpha: 1.0)
+                    header.backgroundColor = customColor
+                }
+                
                 return header
             }
             else {
@@ -157,6 +165,14 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
             cell.compId = itemData[indexPath.section].compId
             cell.itemId = itemData[indexPath.section].itemIds[indexPath.row]
             cell.itemQuantity = quantity
+        }
+        
+        if indexPath.row % 2 == 0 {
+            let customColor = UIColor(red: 255/255.0, green: 238/255.0, blue: 147/255.0, alpha: 1.0)
+            cell.backgroundColor = customColor
+        } else {
+            let customColor = UIColor(red: 252/255.0, green: 245/255.0, blue: 199/255.0, alpha: 1.0)
+            cell.backgroundColor = customColor
         }
         
         return cell

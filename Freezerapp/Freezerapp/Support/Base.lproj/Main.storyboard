@@ -18,42 +18,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the freezer app" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDP-4V-WGz">
-                                <rect key="frame" x="81" y="96" width="212" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGx-JY-kQQ">
-                                <rect key="frame" x="174" y="550.5" width="38" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.94629050086558053" green="0.96235281229019165" blue="0.75904436993588431" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGx-JY-kQQ">
+                                <rect key="frame" x="149" y="601" width="77" height="46"/>
+                                <color key="backgroundColor" red="0.94397697349559739" green="0.96620899438858032" blue="0.82425353251061073" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
+                                <state key="normal" title="Login"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qH8-5Y-CyP"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2k-yE-IOc">
+                                <rect key="frame" x="16" y="161" width="343" height="246"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="snowflake" translatesAutoresizingMaskIntoConstraints="NO" id="WF0-W9-BL8">
+                                <rect key="frame" x="67" y="435" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the freezer app" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDP-4V-WGz">
+                                <rect key="frame" x="0.0" y="67" width="375" height="76"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.86819983036609349" green="0.98105102777481079" blue="0.77946361437378997" alpha="0.9941941352739726" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.82169824476596998" green="0.97637873888015747" blue="0.74657881462304443" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="zDP-4V-WGz" secondAttribute="bottom" constant="550.5" id="Atp-y8-Sn2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zDP-4V-WGz" secondAttribute="trailing" constant="82" id="QxO-ge-AGw"/>
-                            <constraint firstItem="zDP-4V-WGz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="76" id="mVy-cU-5P4"/>
-                            <constraint firstItem="zDP-4V-WGz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="81" id="sc0-lK-9tg"/>
+                            <constraint firstItem="FGx-JY-kQQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="149" id="DvV-gc-k5J"/>
+                            <constraint firstItem="zDP-4V-WGz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Fte-Ci-hhC"/>
+                            <constraint firstItem="zDP-4V-WGz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="47" id="LMh-uv-LL0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="c2k-yE-IOc" secondAttribute="bottom" constant="260" id="NUu-tW-rGK"/>
+                            <constraint firstItem="FGx-JY-kQQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="581" id="PwQ-40-tU7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c2k-yE-IOc" secondAttribute="trailing" constant="16" id="UQC-Lh-hjD"/>
+                            <constraint firstItem="c2k-yE-IOc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="WWP-i9-A3M"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zDP-4V-WGz" secondAttribute="bottom" constant="524" id="ZrT-HC-ex9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FGx-JY-kQQ" secondAttribute="trailing" constant="149" id="dvx-Mc-oBL"/>
+                            <constraint firstItem="zDP-4V-WGz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="h26-YZ-pvd"/>
+                            <constraint firstItem="c2k-yE-IOc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="141" id="kpp-H1-bgN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FGx-JY-kQQ" secondAttribute="bottom" constant="20" id="ra8-OW-5M9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY" colorLabel="IBBuiltInLabel-Blue"/>
                     </view>
                     <connections>
+                        <outlet property="lblText" destination="c2k-yE-IOc" id="Ftk-tg-ujG"/>
                         <segue destination="04I-sD-fcM" kind="show" identifier="startApplication" id="ove-XU-Ybc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-730" y="-115"/>
+            <point key="canvasLocation" x="-730.39999999999998" y="-115.59220389805098"/>
         </scene>
         <!--Freezer Table View Controller-->
         <scene sceneID="sZF-Q2-13o">
@@ -63,11 +87,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vhb-a0-bhZ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vhb-a0-bhZ">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.82169824479999998" green="0.97637873890000004" blue="0.74657881459999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.44604409984202176" green="0.62271671130527551" blue="0.97637873890000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="IDw-uj-Q5Q" detailTextLabel="ZvT-51-wl4" imageView="moy-tS-Ev0" style="IBUITableViewCellStyleSubtitle" id="q8a-To-KoQ" customClass="FreezerTableViewCell" customModule="Freezerapp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="IDw-uj-Q5Q" detailTextLabel="ZvT-51-wl4" imageView="moy-tS-Ev0" style="IBUITableViewCellStyleSubtitle" id="q8a-To-KoQ" customClass="FreezerTableViewCell" customModule="Freezerapp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q8a-To-KoQ" id="gDX-p1-RPy">
@@ -102,6 +127,7 @@
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.8706822395324707" green="0.64444722937794441" blue="0.58737924436720645" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -110,7 +136,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.55649790785320441" green="0.97637873890000004" blue="0.43118287057871557" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Vhb-a0-bhZ" firstAttribute="leading" secondItem="TLR-Gm-Iw7" secondAttribute="leading" id="2Q4-72-uoX"/>
                             <constraint firstItem="Vhb-a0-bhZ" firstAttribute="top" secondItem="TLR-Gm-Iw7" secondAttribute="top" id="R6U-lE-4oR"/>

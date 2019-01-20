@@ -15,12 +15,12 @@ class ViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        lblText.text = "Do you always forget what's in your freezer or refrigerator? Or even your cupboard? Don't worry because the freezerapp is just what you need! Using this app, you make a digital representation of your freezer by adding and deleting items, just like in real life. Then it's easy to check if you still have some of those good pizza's left!"
     }
     
+    @IBOutlet weak var lblText: UILabel!
     //Action that handles the pressing of the login button
     @IBAction func loginPressed(_ sender: UIButton) {
-        
-//        Auth.auth().signIn(withEmail: <#T##String#>, password: <#T##String#>, completion: <#T##AuthDataResultCallback?##AuthDataResultCallback?##(AuthDataResult?, Error?) -> Void#>)
         
         //Get Auth object
         let authUI = FUIAuth.defaultAuthUI()

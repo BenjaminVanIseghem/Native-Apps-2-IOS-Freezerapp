@@ -69,6 +69,14 @@ class FreezerTableViewController : UIViewController, UITableViewDataSource, UITa
         cell.controller = self
         cell.id = freezer.id
         
+        if indexPath.row % 2 == 0 {
+            let customColor = UIColor(red: 255/255.0, green: 238/255.0, blue: 147/255.0, alpha: 1.0)
+            cell.backgroundColor = customColor
+        } else {
+            let customColor = UIColor(red: 252/255.0, green: 245/255.0, blue: 199/255.0, alpha: 1.0)
+            cell.backgroundColor = customColor
+        }
+        
         return cell
     }
     
