@@ -211,18 +211,10 @@ class FirebaseAPI {
         ref.child("items").child(currentUserId!).child(compId).child(itemId)
             .updateChildValues(["name": itemName])
     }
-    //Substract quantity from item
-    func substractOne(compId: String, itemId: String, itemQuantity: String){
-        let q = Int(itemQuantity)! - 1
-        let qStr = String(q)
+
+    //Edit quantity from item
+    func editItemQuantity(compId: String, itemId: String, itemQuantity: String){
         ref.child("items").child(currentUserId!).child(compId).child(itemId)
-            .updateChildValues(["quantity": qStr])
-    }
-    //Add quantity from item
-    func addOne(compId: String, itemId: String, itemQuantity: String){
-        let q = Int(itemQuantity)! + 1
-        let qStr = String(q)
-        ref.child("items").child(currentUserId!).child(compId).child(itemId)
-            .updateChildValues(["quantity": qStr])
+            .updateChildValues(["quantity": itemQuantity])
     }
 }

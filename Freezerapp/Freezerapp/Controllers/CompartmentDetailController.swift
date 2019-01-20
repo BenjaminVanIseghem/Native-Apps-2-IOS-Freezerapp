@@ -143,6 +143,7 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! CompartmentViewCell
 
+        //Pass indexPath data to the cell
         cell.row = indexPath.row
         cell.section = indexPath.section
         cell.compTableViewController = self
@@ -150,10 +151,12 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
         if !itemData.isEmpty {
             let title = itemData[indexPath.section].names[indexPath.row]
             let quantity = itemData[indexPath.section].quantities[indexPath.row]
+            //Pass usefull data to the cell for adding and editing functionality
             cell.nameLabel.text = title
             cell.quantityLabel.text = quantity
             cell.compId = itemData[indexPath.section].compId
             cell.itemId = itemData[indexPath.section].itemIds[indexPath.row]
+            cell.itemQuantity = quantity
         }
         
         return cell
@@ -331,11 +334,24 @@ class CompartmentDetailController : UITableViewController, CompartmentViewHeader
         firebaseAPI.editCompartment(freezerId: (freezer?.id)!, compId: compId, compName: compName)
         itemData[position].headerName = compName
     }
-    
     //Edit an item name
     func editItemName(compId: String, itemId: String, itemName: String, section: Int, row : Int){
         firebaseAPI.editItemName(compId: compId, itemId: itemId, itemName: itemName)
         itemData[section].names[row] = itemName
+    }
+    //Add one to item quantity
+    func itemPlusOne(compId: String, itemId: String, itemQuantity: String, section: Int, row: Int){
+        let q = Int(itemQuantity)! + 1
+        let qStr = String(q)
+        firebaseAPI.editItemQuantity(compId: compId, itemId: itemId, itemQuantity: qStr)
+        itemData[section].quantities[row] = qStr
+    }
+    //Substract one from item quantity
+    func itemMinusOne(compId: String, itemId: String, itemQuantity: String, section: Int, row: Int){
+        let q = Int(itemQuantity)! - 1
+        let qStr = String(q)
+        firebaseAPI.editItemQuantity(compId: compId, itemId: itemId, itemQuantity: qStr)
+        itemData[section].quantities[row] = qStr
     }
 }
 

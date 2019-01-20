@@ -15,6 +15,7 @@ class CompartmentViewCell: UITableViewCell{
     var row : Int?
     var compId : String?
     var itemId : String?
+    var itemQuantity : String?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -94,6 +95,8 @@ class CompartmentViewCell: UITableViewCell{
         
         //Button functionality
         editItemButton.addTarget(self, action: #selector(CompartmentViewCell.editItemName), for: .touchUpInside)
+        minusButton.addTarget(self, action: #selector(CompartmentViewCell.minusOne), for: .touchUpInside)
+        addButton.addTarget(self, action: #selector(CompartmentViewCell.plusOne), for: .touchUpInside)
         
         //Horizontal constraints
         addConstraints(NSLayoutConstraint.constraints(
@@ -169,10 +172,24 @@ class CompartmentViewCell: UITableViewCell{
     }
     //Add one to item quantity
     @objc func plusOne(){
-        
+        compTableViewController?
+            .itemPlusOne(
+                compId: compId!,
+                itemId: itemId!,
+                itemQuantity: itemQuantity!,
+                section: section!,
+                row: row!
+        )
     }
     //Substract one from item quantity
     @objc func minusOne(){
-        
+        compTableViewController?
+            .itemMinusOne(
+                compId: compId!,
+                itemId: itemId!,
+                itemQuantity: itemQuantity!,
+                section: section!,
+                row: row!
+        )
     }
 }
